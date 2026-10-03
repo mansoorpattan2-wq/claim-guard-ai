@@ -1,0 +1,15 @@
+# Isolated clean-start verification ports and volumes (use a new project name).
+services:
+  postgres:
+    ports: !override
+      - "127.0.0.1:15433:5432"
+  backend:
+    image: claimguard-deploy-backend:latest
+    ports: !override
+      - "127.0.0.1:8101:8000"
+    environment:
+      ALLOWED_ORIGINS: http://127.0.0.1:3101
+  frontend:
+    image: claimguard-deploy-frontend:latest
+    ports: !override
+      - "127.0.0.1:3101:3000"

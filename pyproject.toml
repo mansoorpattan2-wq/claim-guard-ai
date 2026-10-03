@@ -1,0 +1,3 @@
+[tool.ruff.lint.per-file-ignores]
+# Preserve the accepted P0 regression file byte-for-byte.
+"backend/tests/test_flows.py" = ["F401"]

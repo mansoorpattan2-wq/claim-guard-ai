@@ -1,0 +1,5 @@
+SYNTHETIC FINAL BILL ? DEMONSTRATION ONLY
+Beneficiary: Demo Alias 101
+Hospital: Cedar Demo Hospital
+Procedure: Laparoscopic appendectomy
+Amount: 78000

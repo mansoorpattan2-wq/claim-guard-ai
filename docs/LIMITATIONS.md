@@ -1,0 +1,20 @@
+# Explicit release limitations
+
+- Synthetic patients, hospitals, doctors, prior procedures and insurer policy wording only. No real PHI or insurer coverage interpretation is represented.
+- Readiness is an illustrative operational score with prototype weights/reserves. It is not approval probability, calibrated accuracy, clinical validation, regulatory approval or measured real-world savings.
+- No autonomous claim approval, denial or fraud conclusion. Graph findings are **INVESTIGATION LEAD** signals. Invoice-template reuse and small-sample frequency are not proof of wrongdoing.
+- No live LLM agents, LangGraph, embeddings, vector store, OCR or Neo4j. Eight named deterministic checks, keyword retrieval and SQL projection are the delivered implementations.
+- TXT requires UTF-8. Text PDF and DOCX are parsed; images/scanned sources are unreadable and need readable evidence/manual review. Limits: 20 files per intake, 2 MB/file, 30 PDF pages, 4 MB expanded DOCX.
+- New intake supports Laparoscopic appendectomy / LAP-APP-01 only and a single confirmed package total. Arbitrary invoice-line extraction and general procedure rule packs are not implemented.
+- FHIR is a narrow **Demo Adapter**: one synthetic R4 collection Bundle, one Patient/Coverage/Claim, Organization references, text/plain DocumentReference/Binary, one LAP-APP-01 procedure/package line and whole-rupee INR. It is not a general validator, certified profile implementation, production conformance or NHCX connection. Only local in-bundle references are resolved.
+- FHIR/local filesystem/in-app notifications are Demo Adapters. NHCX, HIS/HMIS and webhooks are **Not Connected**. No S3, insurer transport, email or hospital-message delivery occurs.
+- Requests/responses in CG021 are explicitly simulated; the subsequent identity/date/signature-field validation, persistence, rerun and readiness calculation are real local operations. Signature-field presence is not signature authenticity verification.
+- SQLite remains the verified local recovery path. PostgreSQL schema v3, fresh migrations and rollback, seeding, tests and CG021 backend-restart persistence are now verified locally in Docker. Public HTTPS/cloud deployment is not verified; see POSTGRES_MIGRATION.md and DEPLOYMENT.md.
+- Deployment is limited to one backend process / one replica; no distributed concurrency guarantee. Jobs run in one process. Restart interruption marks jobs/runs failed and requires retry. Demo-role session tokens are in memory and must be reconnected after restart. There is no production user authentication or tenancy provisioning.
+- Full presentation reset restores active decisions/tasks/readiness, archives previous audit/trace/decision records and imported claims, and reuses stable baseline traces. Historical audit remains available via `/api/audit?include_history=true`. Reset is not a retention/deletion policy.
+- Intake job recovery uses this browser tab's session storage and persisted backend job records. It is not a cross-device workflow inbox. Full reset clears the current tab's intake references; other tabs should reload.
+- A local API outage cannot produce fresh live results. Retry/start the service or use clearly identified previously captured evidence as a static walkthrough; never call that a successful live run.
+- Printable HTML is exported completely; PDF uses the browser print dialog, not a server PDF service. The preview scrolls. The full graph is desktop; mobile shows signal cards and linked claims.
+- Full-screen-reader audit, Python dependency vulnerability audit, penetration test, production load test, backups/restoration, tenant adversarial testing and clinical/operational outcome studies remain unperformed.
+
+Production demo reset additionally requires a presenter secret. Public role selection remains prototype authentication, not verified identity; the browser reset is rejected without that secret. Container upload bytes use a persistent volume; cloud original-byte retention requires a persistent disk. No object store is connected.

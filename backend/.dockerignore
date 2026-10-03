@@ -1,0 +1,10 @@
+vendor
+tools
+storage
+*.db*
+__pycache__
+.pytest_cache
+.deployment-data
+.env*
+tests
+*.log

@@ -1,0 +1,9 @@
+SYNTHETIC OPERATIVE REPORT ? DEMONSTRATION ONLY
+Beneficiary: Demo Alias 101
+Hospital: Cedar Demo Hospital
+Procedure: Laparoscopic appendectomy
+Admission: 2026-10-01
+Discharge: 2026-10-03
+Service date: 2026-10-02
+Amount: 78000
+Signed by: Dr. FHIR Demo

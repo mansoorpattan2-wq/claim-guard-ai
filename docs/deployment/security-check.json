@@ -1,0 +1,8 @@
+{
+  "actual_reset_or_database_secret_in_frontend_static": false,
+  "actual_reset_or_database_secret_in_backend_logs": false,
+  "static_bytes_inspected": 1753123,
+  "log_bytes_inspected": 212188,
+  "git_repository_present": false,
+  "production_identity": "prototype role selection; reset additionally secret-protected"
+}

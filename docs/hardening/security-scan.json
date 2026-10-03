@@ -1,0 +1,8 @@
+{
+  "files_scanned": 36,
+  "production_browser_assets_scanned": 10,
+  "heuristic_findings": [],
+  "env_ignored": true,
+  "git_repository_present": false,
+  "scope": "Present-source and production-browser-asset heuristic scan, not exhaustive certification."
+}

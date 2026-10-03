@@ -1,0 +1,18 @@
+{
+  "database": "PostgreSQL",
+  "cg021_before_restart": [
+    94,
+    "READY"
+  ],
+  "cg021_after_restart": [
+    94,
+    "READY"
+  ],
+  "passport_task_runs_equal": true,
+  "audit_equal": true,
+  "human_decisions_equal": true,
+  "original_upload_retained": true,
+  "reset_twice": "DEMO READY",
+  "active_claims": 50,
+  "sessions_require_reconnect": true
+}

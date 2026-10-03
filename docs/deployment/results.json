@@ -1,0 +1,40 @@
+{
+  "backend_sqlite_tests": 40,
+  "backend_postgres_tests": 39,
+  "postgres_sqlite_specific_test_excluded": 1,
+  "browser_postgres_tests": 19,
+  "browser_sqlite_tests": 19,
+  "postgres_complete_reset_rehearsals": 3,
+  "clean_volume_complete_flow": true,
+  "build": "production Docker Next.js PASS",
+  "checks": {
+    "postgres": {
+      "status": "DEMO READY",
+      "failures": [],
+      "database": "postgresql",
+      "schema_version": 3,
+      "visible_claims": 50,
+      "reset_available": true,
+      "reset_check": "Read-only availability check; mutation correctness verified by regression tests."
+    },
+    "clean_postgres": {
+      "status": "DEMO READY",
+      "failures": [],
+      "database": "postgresql",
+      "schema_version": 3,
+      "visible_claims": 50,
+      "reset_available": true,
+      "reset_check": "Read-only availability check; mutation correctness verified by regression tests."
+    },
+    "sqlite": {
+      "status": "DEMO READY",
+      "failures": [],
+      "database": "SQLite",
+      "schema_version": 3,
+      "visible_claims": 50,
+      "reset_available": true,
+      "reset_check": "Read-only availability check; mutation correctness verified by regression tests."
+    }
+  },
+  "public_deployment": "NOT DEPLOYED; public HTTPS sequence NOT VERIFIED"
+}

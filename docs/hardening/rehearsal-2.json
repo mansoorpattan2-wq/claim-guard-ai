@@ -1,0 +1,33 @@
+{
+  "run": 2,
+  "states": {
+    "CG001": {
+      "status": "READY",
+      "readiness": 98
+    },
+    "CG021": {
+      "status": "READY",
+      "readiness": 94
+    },
+    "CG030": {
+      "status": "READY",
+      "readiness": 98
+    },
+    "CG048": {
+      "status": "INVESTIGATION",
+      "readiness": 95
+    }
+  },
+  "timings": {
+    "dashboard_initial_load_ms": 1984,
+    "claim_load_ms": 775,
+    "resolution_request_action_ms": 588,
+    "validation_and_targeted_rerun_roundtrip_ms": 690,
+    "knowledge_query_ms": 597,
+    "investigation_graph_load_ms": 1045,
+    "fhir_import_ms": 1131,
+    "targeted_rerun_backend_ms": 13.09,
+    "sequence_total_ms": 17862
+  },
+  "scope": "Local deterministic synthetic UI flows. No narration or artificial presentation waits."
+}

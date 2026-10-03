@@ -1,0 +1,175 @@
+{
+  "resourceType": "Bundle",
+  "id": "claimguard-synthetic-r4-demo",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "demo-patient",
+        "identifier": [
+          {
+            "system": "https://demo.claimguard.invalid/patient",
+            "value": "SYN-FHIR-101"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "demo-hospital",
+        "name": "Cedar FHIR Demo Hospital"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "demo-payer",
+        "name": "DemoCare Health"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "demo-coverage",
+        "status": "active",
+        "beneficiary": {
+          "reference": "Patient/demo-patient"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/demo-payer"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Claim",
+        "id": "demo-claim",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "institutional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "Patient/demo-patient"
+        },
+        "billablePeriod": {
+          "start": "2026-10-01",
+          "end": "2026-10-03"
+        },
+        "created": "2026-10-03",
+        "provider": {
+          "reference": "Organization/demo-hospital"
+        },
+        "priority": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+              "code": "normal"
+            }
+          ]
+        },
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "Coverage/demo-coverage"
+            }
+          }
+        ],
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "2026-10-02",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://demo.claimguard.invalid/package",
+                  "code": "LAP-APP-01",
+                  "display": "Laparoscopic appendectomy"
+                }
+              ]
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "https://demo.claimguard.invalid/package",
+                  "code": "LAP-APP-01"
+                }
+              ]
+            },
+            "quantity": {
+              "value": 1
+            },
+            "unitPrice": {
+              "value": 78000,
+              "currency": "INR"
+            },
+            "net": {
+              "value": 78000,
+              "currency": "INR"
+            }
+          }
+        ],
+        "total": {
+          "value": 78000,
+          "currency": "INR"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "demo-operative",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "https://demo.claimguard.invalid/document-type",
+              "code": "operative_report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/demo-patient"
+        },
+        "description": "Synthetic signed operative report for demonstration only",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "url": "Binary/demo-report",
+              "title": "Synthetic operative report"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Binary",
+        "id": "demo-report",
+        "contentType": "text/plain",
+        "data": "U1lOVEhFVElDIE9QRVJBVElWRSBSRVBPUlQgPyBERU1PTlNUUkFUSU9OIE9OTFkKQmVuZWZpY2lhcnk6IFNZTi1GSElSLTEwMQpIb3NwaXRhbDogQ2VkYXIgRkhJUiBEZW1vIEhvc3BpdGFsClByb2NlZHVyZTogTGFwYXJvc2NvcGljIGFwcGVuZGVjdG9teQpBZG1pc3Npb246IDIwMjYtMTAtMDEKRGlzY2hhcmdlOiAyMDI2LTEwLTAzClNlcnZpY2UgZGF0ZTogMjAyNi0xMC0wMgpBbW91bnQ6IDc4MDAwClNpZ25lZCBieTogRHIuIEZISVIgRGVtbwo="
+      }
+    }
+  ]
+}

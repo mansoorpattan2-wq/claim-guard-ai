@@ -1,0 +1,293 @@
+{
+  "results": [
+    {
+      "name": "dashboard",
+      "route": "/dashboard",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "dashboard",
+      "route": "/dashboard",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "dashboard",
+      "route": "/dashboard",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "dashboard",
+      "route": "/dashboard",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "claims",
+      "route": "/claims",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "claims",
+      "route": "/claims",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "claims",
+      "route": "/claims",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "claims",
+      "route": "/claims",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "intake",
+      "route": "/claims/new",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "intake",
+      "route": "/claims/new",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "intake",
+      "route": "/claims/new",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "intake",
+      "route": "/claims/new",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "passport",
+      "route": "/claims/CG021",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "passport",
+      "route": "/claims/CG021",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "passport",
+      "route": "/claims/CG021",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "passport",
+      "route": "/claims/CG021",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "evidence",
+      "route": "/claims/CG021/evidence/CG021-F14",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "evidence",
+      "route": "/claims/CG021/evidence/CG021-F14",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "evidence",
+      "route": "/claims/CG021/evidence/CG021-F14",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "evidence",
+      "route": "/claims/CG021/evidence/CG021-F14",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "resolution",
+      "route": "/resolutions",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "resolution",
+      "route": "/resolutions",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "resolution",
+      "route": "/resolutions",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "resolution",
+      "route": "/resolutions",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "review",
+      "route": "/review",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "review",
+      "route": "/review",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "review",
+      "route": "/review",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "review",
+      "route": "/review",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "knowledge",
+      "route": "/knowledge",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "knowledge",
+      "route": "/knowledge",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "knowledge",
+      "route": "/knowledge",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "knowledge",
+      "route": "/knowledge",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "investigations",
+      "route": "/investigations",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "investigations",
+      "route": "/investigations",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "investigations",
+      "route": "/investigations",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "investigations",
+      "route": "/investigations",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "integrations",
+      "route": "/integrations",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "integrations",
+      "route": "/integrations",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "integrations",
+      "route": "/integrations",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "integrations",
+      "route": "/integrations",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "audit",
+      "route": "/audit",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "audit",
+      "route": "/audit",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "audit",
+      "route": "/audit",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "audit",
+      "route": "/audit",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "printable",
+      "route": "/claims/CG001/passport",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "printable",
+      "route": "/claims/CG001/passport",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "printable",
+      "route": "/claims/CG001/passport",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "printable",
+      "route": "/claims/CG001/passport",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

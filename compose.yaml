@@ -1,0 +1,46 @@
+# Bootstrap is explicit; backend startup never seeds/resets.
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: claimguard
+      POSTGRES_USER: claimguard
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in deploy.env}
+    ports:
+      - "127.0.0.1:15432:5432"
+    volumes:
+      - claimguard_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U claimguard -d claimguard"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://claimguard:${POSTGRES_PASSWORD}@postgres:5432/claimguard
+      APP_ENV: production
+      DEMO_MODE: "true"
+      DEMO_RESET_KEY: ${DEMO_RESET_KEY:?Set DEMO_RESET_KEY in deploy.env}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://127.0.0.1:3100}
+      UPLOAD_DIR: /data/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8100:8000"
+    volumes:
+      - claimguard_uploads:/data/uploads
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        API_URL: http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3100:3000"
+volumes:
+  claimguard_data:
+  claimguard_uploads:

@@ -1,0 +1,1078 @@
+{
+  "postgresql": "PostgreSQL 17.11 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+  "revisions": [
+    1,
+    2,
+    3
+  ],
+  "repeated_migration": "PASS",
+  "failed_migration_rollback": "PASS",
+  "tables": {
+    "organisations": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "organisations_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "claims": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "org_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "patient",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "hospital",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "procedure",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "amount",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "readiness",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "claims_org_id_fkey",
+          "constrained_columns": [
+            "org_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "organisations",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "claims_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "documents": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "claim_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "kind",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "text",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "hash",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "documents_claim_id_fkey",
+          "constrained_columns": [
+            "claim_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "claims",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "documents_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "findings": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "claim_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "rule",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "findings_claim_id_fkey",
+          "constrained_columns": [
+            "claim_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "claims",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "findings_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "resolution_tasks": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "claim_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "finding_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "resolution_tasks_claim_id_fkey",
+          "constrained_columns": [
+            "claim_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "claims",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        },
+        {
+          "name": "resolution_tasks_finding_id_fkey",
+          "constrained_columns": [
+            "finding_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "findings",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "resolution_tasks_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "audit_events": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "claim_id",
+          "type": "VARCHAR",
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "org_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "timestamp",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "actor",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "event",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "audit_events_claim_id_fkey",
+          "constrained_columns": [
+            "claim_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "claims",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        },
+        {
+          "name": "audit_events_org_id_fkey",
+          "constrained_columns": [
+            "org_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "organisations",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "audit_events_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "agent_runs": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "claim_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "agent",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "agent_runs_claim_id_fkey",
+          "constrained_columns": [
+            "claim_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "claims",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "agent_runs_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "human_decisions": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "finding_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "human_decisions_finding_id_fkey",
+          "constrained_columns": [
+            "finding_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "findings",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "human_decisions_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "knowledge_chunks": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "org_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "text",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "knowledge_chunks_org_id_fkey",
+          "constrained_columns": [
+            "org_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "organisations",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "knowledge_chunks_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "schema_migrations": {
+      "columns": [
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "nextval('schema_migrations_version_seq'::regclass)",
+          "autoincrement": true,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [],
+      "primary_key": {
+        "constrained_columns": [
+          "version"
+        ],
+        "name": "schema_migrations_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "intakes": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "org_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "claim_id",
+          "type": "VARCHAR",
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "intakes_claim_id_fkey",
+          "constrained_columns": [
+            "claim_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "claims",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        },
+        {
+          "name": "intakes_org_id_fkey",
+          "constrained_columns": [
+            "org_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "organisations",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "intakes_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "intake_files": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "intake_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "kind",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "text",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "intake_files_intake_id_fkey",
+          "constrained_columns": [
+            "intake_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "intakes",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "intake_files_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "analysis_jobs": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "claim_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "analysis_jobs_claim_id_fkey",
+          "constrained_columns": [
+            "claim_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "claims",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "analysis_jobs_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "knowledge_sources": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "org_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "knowledge_sources_org_id_fkey",
+          "constrained_columns": [
+            "org_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "organisations",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "knowledge_sources_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    },
+    "procedure_history": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "org_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "claim_id",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "patient",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "procedure",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "service_date",
+          "type": "VARCHAR",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "nullable": false,
+          "default": null,
+          "autoincrement": false,
+          "comment": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "procedure_history_claim_id_fkey",
+          "constrained_columns": [
+            "claim_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "claims",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        },
+        {
+          "name": "procedure_history_org_id_fkey",
+          "constrained_columns": [
+            "org_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "organisations",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {},
+          "comment": null
+        }
+      ],
+      "primary_key": {
+        "constrained_columns": [
+          "id"
+        ],
+        "name": "procedure_history_pkey",
+        "comment": null,
+        "dialect_options": {
+          "postgresql_include": []
+        }
+      },
+      "secondary_indexes": []
+    }
+  }
+}
