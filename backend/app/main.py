@@ -72,13 +72,37 @@ async def lifespan(app):
     engine.dispose()
 
 
-app = FastAPI(title="ClaimGuard AI", lifespan=lifespan)
+app = FastAPI(
+    title="ClaimGuard AI",
+    description="ClaimGuard AI backend API for intelligent claim analysis and verification.",
+    version="1.0.0",
+    lifespan=lifespan,
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
+)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type", "Authorization", "X-Demo-Reset-Key"],
 )
+@app.get("/", tags=["System"])
+def root():
+    return {
+        "status": "success",
+        "service": "ClaimGuard AI",
+        "message": "ClaimGuard AI Backend is running",
+        "docs": "/docs"
+    }
+
+
+@app.get("/health", tags=["System"])
+def health():
+    return {
+        "status": "healthy",
+        "service": "ClaimGuard AI"
+    }
 
 
 @app.middleware("http")
